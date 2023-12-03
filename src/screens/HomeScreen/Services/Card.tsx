@@ -1,6 +1,5 @@
-// Card.js
 import React from "react"
-import ExampleButton from "../../../components/GlobalComponents/Button"
+import PrimaryButton from "../../../components/GlobalComponents/Button"
 
 const Card = ({title, description, image}) => {
   const handleClick = () => {
@@ -13,7 +12,7 @@ const Card = ({title, description, image}) => {
       <div className='px-6 py-4'>
         <div className='font-bold text-xl mb-2'>{title}</div>
         <p className='text-gray-700 text-base text-[20px]'>{description}</p>
-        <ExampleButton onClick={handleClick} label='Xem thêm' />
+        <PrimaryButton onClick={handleClick} label='Xem thêm' />
       </div>
     </div>
   )

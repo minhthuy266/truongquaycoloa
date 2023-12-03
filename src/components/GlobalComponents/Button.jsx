@@ -1,7 +1,6 @@
-// ExampleButton.js
-import React from "react"
+import PropTypes from "prop-types"
 
-const ExampleButton = ({onClick, label}) => {
+const PrimaryButton = ({onClick, label}) => {
   return (
     <button
       onClick={onClick}
@@ -11,4 +10,9 @@ const ExampleButton = ({onClick, label}) => {
   )
 }
 
-export default ExampleButton
+PrimaryButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+}
+
+export default PrimaryButton

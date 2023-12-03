@@ -38,6 +38,10 @@ const Header = () => {
     )
   }
 
+  GalleryNavLink.propTypes = {
+    children: PropTypes.node.isRequired,
+  }
+
   return (
     <nav
       className='bg-gray-800 p-4 w-[100vw] fixed top-0 right-0 left-0 bg-center bg-opacity-0 global-text-base flex items-center z-50'
@@ -153,7 +157,3 @@ NavLink.propTypes = {
   to: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 }
-
-// GalleryNavLink.propTypes = {
-//   children: PropTypes.node.isRequired,
-// }
