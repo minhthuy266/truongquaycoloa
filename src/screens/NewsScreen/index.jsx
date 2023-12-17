@@ -1,6 +1,10 @@
+import NewsBox from "../../components/NewsScreenComponents/NewsBox"
+
 const NewsScreen = () => {
   return (
-    <div>NewsScreen</div>
+    <div>
+      <NewsBox />
+    </div>
   )
 }
 

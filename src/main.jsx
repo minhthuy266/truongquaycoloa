@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <MainLayout>
-       <HomeScreen />
+        <HomeScreen />
       </MainLayout>
     ),
   },
@@ -27,44 +27,36 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: (
-      <Routes>
-        <Route path='/' element={<MainLayout />}>
-          <Route element={<AboutScreen />} />
-        </Route>
-      </Routes>
+      <MainLayout>
+        <AboutScreen />
+      </MainLayout>
     ),
   },
 
   {
     path: "/news",
     element: (
-      <Routes>
-        <Route path='/' element={<MainLayout />}>
-          <Route element={<NewsScreen />} />
-        </Route>
-      </Routes>
+      <MainLayout>
+        <NewsScreen />
+      </MainLayout>
     ),
   },
 
   {
     path: "/services",
     element: (
-      <Routes>
-        <Route path='/' element={<MainLayout />}>
-          <Route element={<ServicesScreen />} />
-        </Route>
-      </Routes>
+      <MainLayout>
+        <ServicesScreen />
+      </MainLayout>
     ),
   },
 
   {
     path: "/news",
     element: (
-      <Routes>
-        <Route path='/' element={<MainLayout />}>
-          <Route element={<NewsScreen />} />
-        </Route>
-      </Routes>
+      <MainLayout>
+        <NewsScreen />
+      </MainLayout>
     ),
   },
 ])
