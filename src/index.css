@@ -95,6 +95,26 @@ button:focus-visible {
   border-bottom-color: transparent;
 }
 
+.swiper-slide {
+  display: flex !important;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  padding-bottom: 6rem
+}
+
+.clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.kg-card.kg-embed-card iframe {
+  width: 100%;
+  height: 400px !important;
+  border: none;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

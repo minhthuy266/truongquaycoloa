@@ -4,7 +4,7 @@ import "swiper/css"
 const ShowTime = () => {
   return (
     <div
-      className='text-black w-[100vw] h-[80vh] bg-no-repeat p-4'
+      className='text-black w-[100vw] h-[150vh] bg-no-repeat p-4'
       style={{
         backgroundImage:
           "url('http://truongquaycoloa.com/sites/all/themes/midnight/imgs/bg_lichchieu.jpg')",
@@ -19,13 +19,15 @@ const ShowTime = () => {
           spaceBetween={50}
           slidesPerView={1}
           onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}>
+          onSwiper={(swiper) => console.log(swiper)}
+          className="flex"
+          >
           <SwiperSlide className='flex justify-center'>
-            <div className='container'>
+            <div className='container flex justify-center'>
               <img
                 src='http://truongquaycoloa.com/sites/default/files/LCP%2025.10-29.10.jpg'
                 alt=''
-                className='w-[100%] h-[65vh] object-contain'
+                className='w-100 h-[90vh] object-contain'
               />
             </div>
           </SwiperSlide>

@@ -1,6 +1,10 @@
+import ShowTime from '../HomeScreen/ShowTime'
+
 const ShowTimeScreen = () => {
     return (
-      <div>ShowTimeScreen</div>
+      <div className='min-h-[100vh]'>
+        <ShowTime />
+      </div>
     )
   }
   

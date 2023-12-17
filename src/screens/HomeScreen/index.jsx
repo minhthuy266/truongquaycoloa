@@ -1,8 +1,8 @@
-import Slider from "./Banner"
-import News from "./News"
-import Services from "./Services"
-import ShowTime from "./ShowTime"
-import UpcomingMovies from "./UpcomingMovies"
+import Slider from "./Banner";
+import News from "./News";
+import Services from "./Services";
+import ShowTime from "./ShowTime";
+import UpcomingMovies from "./UpcomingMovies";
 
 const HomeScreen = () => {
   return (
@@ -13,7 +13,7 @@ const HomeScreen = () => {
       <UpcomingMovies />
       <News />
     </>
-  )
-}
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;

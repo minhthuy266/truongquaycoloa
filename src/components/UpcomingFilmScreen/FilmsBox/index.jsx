@@ -1,22 +1,23 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../utils";
+  
+  const FilmsBox = () => {
+    const [posts, setPosts] = useState([]);
 
-const NewsBox = () => {
-  const [posts, setPosts] = useState([]);
+    useEffect(() => {
+      api.posts
+        .browse({ include: "tags,authors", filter: "tag:phim-sap-chieu" })
+        .then((posts) => {
+          setPosts(posts);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }, []);
+  
 
-  useEffect(() => {
-    api.posts
-      .browse({ include: "tags,authors", filter: "tag:tin-tuc-trang-chu" })
-      .then((posts) => {
-        setPosts(posts);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
-
-  return (
-    <div className="container mx-auto p-4 mt-[120px] pb-[60px]">
+    return (
+      <div className="container mx-auto p-4 mt-[120px] pb-[60px]">
       <input
         type="text"
         placeholder="Search news..."
@@ -43,7 +44,8 @@ const NewsBox = () => {
         ))}
       </div>
     </div>
-  );
-};
-
-export default NewsBox;
+    )
+  }
+  
+  export default FilmsBox
+  

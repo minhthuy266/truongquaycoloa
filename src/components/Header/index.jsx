@@ -64,8 +64,8 @@ const Header = () => {
           <NavLink to='/about'>GIỚI THIỆU</NavLink>
           <NavLink to='/news'>TIN TỨC</NavLink>
           <NavLink to='/services'>DỊCH VỤ</NavLink>
-          <NavLink to='/contact'>PHIM SẮP CHIẾU</NavLink>
-          <NavLink to='/contact'>LỊCH CHIẾU PHIM</NavLink>
+          <NavLink to='/upcoming-films'>PHIM SẮP CHIẾU</NavLink>
+          <NavLink to='/showtime'>LỊCH CHIẾU PHIM</NavLink>
           <GalleryNavLink to='/gallery'>GALLERY</GalleryNavLink>
         </div>
 

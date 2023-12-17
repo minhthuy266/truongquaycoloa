@@ -10,14 +10,11 @@ const Card = ({ card }) => {
 
   return (
     <div className="rounded-lg overflow-hidden shadow-lg">
-      {/* <img
+      <img
         className="w-full h-[260px] object-cover"
         src={card?.feature_image}
         alt={card?.title}
-      /> */}
-      
-      <div dangerouslySetInnerHTML={{ __html: card.html }} className='h-[400px]'/>
-     
+      />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2 text-black">{card?.title}</div>
         {/* <p className='text-gray-700 text-[20px]'>{description}</p> */}

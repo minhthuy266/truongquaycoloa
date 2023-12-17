@@ -1,6 +1,4 @@
-// CardList.js
-import React from "react"
-import Card from "./Card"
+import Card from "./Card";
 
 const cardData = [
   {
@@ -26,16 +24,16 @@ const cardData = [
     image:
       "http://truongquaycoloa.com/sites/default/files/styles/sp_n_i_b_t/public/anh%20truong%20quay_0.jpg?itok=RMFCn6St",
   },
-]
+];
 
 const CardList = () => {
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-[100%] gap-8'>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-[100%] gap-8">
       {cardData.map((card, index) => (
         <Card key={index} {...card} />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default CardList
+export default CardList;

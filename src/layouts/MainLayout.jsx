@@ -1,15 +1,21 @@
-import Header from "../components/Header"
 import Footer from "../components/Footer"
-import {Outlet} from "react-router-dom"
+import ScrollToTop from "../components/GlobalComponents/ScrollToTop"
+import Header from "../components/Header"
+import propTypes from "prop-types"
 
-const MainLayout = ({children}) => {
+const MainLayout = ({ children }) => {
   return (
     <>
       <Header />
       {children}
       <Footer />
+      <ScrollToTop />
     </>
   )
 }
 
 export default MainLayout
+
+MainLayout.propTypes = {
+  children: propTypes.node.isRequired,
+}

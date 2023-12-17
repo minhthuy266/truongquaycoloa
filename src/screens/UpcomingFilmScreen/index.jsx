@@ -1,6 +1,10 @@
+import FilmsBox from "../../components/UpcomingFilmScreen/FilmsBox"
+
 const UpcomingFilmScreen = () => {
     return (
-      <div>UpcomingFilmScreen</div>
+      <div>
+        <FilmsBox/>
+      </div>
     )
   }
   

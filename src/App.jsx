@@ -1,5 +1,5 @@
-import "./App.css"
-import {Button} from "antd"
+import { Button } from "antd";
+import "./App.css";
 
 function App() {
   return (
