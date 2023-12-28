@@ -1,28 +1,34 @@
 import Card from "./Card";
+import Image1 from "../../../assets/images/DichVu_TruongQuayNgoaiCanh.jpg";
+import Image2 from "../../../assets/images/DichVu_TrangPhucDaoCu.jpg";
+import Image3 from "../../../assets/images/DichVu_ThietBiLamPhim.jpg";
+import Image4 from "../../../assets/images/DichVu_TruongQuayNoi.jpg";
+import { Link } from "react-router-dom";
 
 const cardData = [
   {
     title: "Card 1",
     description: "TRƯỜNG QUAY NGOẠI CẢNH",
-    image: "http://truongquaycoloa.com/sites/default/files/tong%20the-PA2.jpg",
+    image: Image1,
+    url: "/dich-vu/truong-quay-ngoai-canh",
   },
   {
     title: "Card 2",
     description: "TRANG PHỤC - ĐẠO CỤ",
-    image:
-      "http://truongquaycoloa.com/sites/default/files/M%C5%A9%20quan%20v%C4%83n%20%282%29.JPG",
+    image: Image2,
+    url: "/dich-vu/trang-phuc-dao-cu",
   },
   {
     title: "Card 3",
     description: "THIẾT BỊ LÀM PHIM",
-    image:
-      "http://truongquaycoloa.com/sites/default/files/Sony%20fs%20700%20%282%29_0.JPG",
+    image: Image3,
+    url: "/dich-vu/thiet-bi-lam-phim",
   },
   {
     title: "Card 4",
     description: "TRƯỜNG QUAY NỘI",
-    image:
-      "http://truongquaycoloa.com/sites/default/files/styles/sp_n_i_b_t/public/anh%20truong%20quay_0.jpg?itok=RMFCn6St",
+    image: Image4,
+    url: "/dich-vu/truong-quay-noi",
   },
 ];
 
@@ -30,7 +36,9 @@ const CardList = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-[100%] gap-8">
       {cardData.map((card, index) => (
-        <Card key={index} {...card} />
+        <Link to={card.url} key={index}>
+          <Card key={index} {...card} />
+        </Link>
       ))}
     </div>
   );

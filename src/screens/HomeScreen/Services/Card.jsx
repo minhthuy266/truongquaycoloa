@@ -10,7 +10,6 @@ const Card = ({ title, description, image }) => {
     <div className="">
       <img className="w-full h-[260px] object-cover" src={image} alt={title} />
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{title}</div>
         <p className="text-gray-700 text-[20px]">{description}</p>
         <PrimaryButton onClick={handleClick} label="Xem thêm" />
       </div>

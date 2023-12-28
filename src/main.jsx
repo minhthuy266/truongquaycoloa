@@ -10,6 +10,8 @@ import ServicesScreen from "./screens/ServicesScreen";
 import UpcomingFilmScreen from "./screens/UpcomingFilmScreen";
 import ShowTimeScreen from "./screens/ShowTimeScreen";
 import GalleryScreen from "./screens/GalleryScreen";
+import OutDoorScreen from "./screens/OutDoorScreen";
+import CostumeAndPropsScreen from "./screens/CostumeAndPropsScreen";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +24,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/about",
+    path: "/gioi-thieu",
     element: (
       <MainLayout>
         <AboutScreen />
@@ -31,7 +33,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/news",
+    path: "/tin-tuc",
     element: (
       <MainLayout>
         <NewsScreen />
@@ -40,7 +42,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/services",
+    path: "/dich-vu",
     element: (
       <MainLayout>
         <ServicesScreen />
@@ -49,7 +51,25 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/news",
+    path: "/dich-vu/truong-quay-ngoai-canh",
+    element: (
+      <MainLayout>
+        <OutDoorScreen />
+      </MainLayout>
+    ),
+  },
+
+  {
+    path: "/dich-vu/trang-phuc-dao-cu",
+    element: (
+      <MainLayout>
+        <CostumeAndPropsScreen />
+      </MainLayout>
+    ),
+  },
+
+  {
+    path: "/tin-tuc",
     element: (
       <MainLayout>
         <NewsScreen />
@@ -57,7 +77,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/upcoming-films",
+    path: "/phim-sap-chieu",
     element: (
       <MainLayout>
         <UpcomingFilmScreen />
@@ -65,7 +85,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/showtime",
+    path: "/lich-chieu-phim",
     element: (
       <MainLayout>
         <ShowTimeScreen />

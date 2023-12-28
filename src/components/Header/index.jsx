@@ -61,11 +61,11 @@ const Header = () => {
         {/* Navigation Links */}
         <div className='hidden md:flex space-x-20 opacity-100 items-center'>
           <NavLink to='/'></NavLink>
-          <NavLink to='/about'>GIỚI THIỆU</NavLink>
-          <NavLink to='/news'>TIN TỨC</NavLink>
-          <NavLink to='/services'>DỊCH VỤ</NavLink>
-          <NavLink to='/upcoming-films'>PHIM SẮP CHIẾU</NavLink>
-          <NavLink to='/showtime'>LỊCH CHIẾU PHIM</NavLink>
+          <NavLink to='/gioi-thieu'>GIỚI THIỆU</NavLink>
+          <NavLink to='/tin-tuc'>TIN TỨC</NavLink>
+          <NavLink to='/dich-vu'>DỊCH VỤ</NavLink>
+          <NavLink to='/phim-sap-chieu'>PHIM SẮP CHIẾU</NavLink>
+          <NavLink to='/lich-chieu-phim'>LỊCH CHIẾU PHIM</NavLink>
           <GalleryNavLink to='/gallery'>GALLERY</GalleryNavLink>
         </div>
 
