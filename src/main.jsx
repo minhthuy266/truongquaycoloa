@@ -1,6 +1,11 @@
 import * as React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./post-feed.css";
+import "./single-post.css";
+import "./animations.css";
+import "./portal.css";
+import "./kg.css";
 import "./index.css";
 import MainLayout from "./layouts/MainLayout";
 import AboutScreen from "./screens/AboutScreen";
@@ -12,6 +17,9 @@ import ShowTimeScreen from "./screens/ShowTimeScreen";
 import GalleryScreen from "./screens/GalleryScreen";
 import OutDoorScreen from "./screens/OutDoorScreen";
 import CostumeAndPropsScreen from "./screens/CostumeAndPropsScreen";
+import FilmmakingEquipmentScreen from "./screens/FilmmakingEquipmentScreen";
+import InDoorScreen from "./screens/InDoorScreen";
+import NewsDetailScreen from "./screens/NewsDetailScreen";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +77,24 @@ const router = createBrowserRouter([
   },
 
   {
+    path: "/dich-vu/thiet-bi-lam-phim",
+    element: (
+      <MainLayout>
+        <FilmmakingEquipmentScreen />
+      </MainLayout>
+    ),
+  },
+
+  {
+    path: "/dich-vu/truong-quay-noi",
+    element: (
+      <MainLayout>
+        <InDoorScreen />
+      </MainLayout>
+    ),
+  },
+
+  {
     path: "/tin-tuc",
     element: (
       <MainLayout>
@@ -76,6 +102,16 @@ const router = createBrowserRouter([
       </MainLayout>
     ),
   },
+
+  {
+    path: "/tin-tuc/:slug",
+    element: (
+      <MainLayout>
+        <NewsDetailScreen />
+      </MainLayout>
+    ),
+  },
+
   {
     path: "/phim-sap-chieu",
     element: (

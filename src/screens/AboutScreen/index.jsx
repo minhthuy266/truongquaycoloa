@@ -1,7 +1,7 @@
 const AboutScreen = () => {
   return (
-    <div className='text-black container mx-auto mt-[120px] global-text-base custom-min-height'>
-      <div className='container'>
+    <div className="text-black container mx-auto mt-[120px] global-text-base custom-min-height">
+      <div className="container pb-24">
         <h1>Giới thiệu</h1>
         <p>Mọi thông tin chi tiết xin liên hệ:</p>
         <p>
@@ -11,7 +11,7 @@ const AboutScreen = () => {
         <p>Mr. Nguyễn Thế Anh - Phụ Trách Phòng Kế Hoạch - SĐT: 0965.510.795</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AboutScreen
+export default AboutScreen;
