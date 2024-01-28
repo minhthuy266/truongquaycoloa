@@ -7,7 +7,11 @@ const News = () => {
 
   useEffect(() => {
     api.posts
-      .browse({ limit: 4, include: "tags,authors", filter: "tag:tin-tuc-trang-chu"})
+      .browse({
+        limit: 4,
+        include: "tags,authors",
+        filter: "tag:tin-tuc-trang-chu",
+      })
       .then((posts) => {
         setPosts(posts);
       })
@@ -17,12 +21,14 @@ const News = () => {
   }, []);
 
   return (
-    <div className="container mx-auto pt-16 pb-16">
-      <div className="text-black p-8 uppercase text-[38px] text-center">
-        Tin tức
-      </div>
-      <div className="text-[38px] uppercase flex flex-row items-center mx-auto">
-        <CardList posts={posts} />
+    <div className="bg-[#f1f1f2]">
+      <div className="container mx-auto pt-40 pb-72">
+        <div className="text-black pb-16 uppercase text-[38px] text-center">
+          Tin tức
+        </div>
+        <div className="text-[38px] uppercase flex flex-row items-center mx-auto">
+          <CardList posts={posts} />
+        </div>
       </div>
     </div>
   );

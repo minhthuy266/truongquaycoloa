@@ -1,14 +1,17 @@
-import { useState, useEffect } from "react";
-import CardList from "./CardList"
+import { useEffect, useState } from "react";
 import { api } from "../../../utils";
-
+import CardList from "./CardList";
 
 const UpcomingMovies = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     api.posts
-      .browse({ limit: 4, include: "tags,authors", filter: "tag:phim-sap-chieu-trang-chu"})
+      .browse({
+        limit: 4,
+        include: "tags,authors",
+        filter: "tag:phim-sap-chieu-trang-chu",
+      })
       .then((posts) => {
         setPosts(posts);
       })
@@ -18,14 +21,14 @@ const UpcomingMovies = () => {
   }, []);
 
   return (
-    <div className='container mx-auto pb-8'>
-      <div className='text-black p-8 uppercase text-[38px] text-center'>
+    <div className="container mx-auto pt-40 pb-48">
+      <div className="text-black pb-16 uppercase text-[38px] text-center">
         Phim sắp chiếu
       </div>
 
-      <CardList posts={posts}/>
+      <CardList posts={posts} />
     </div>
-  )
-}
+  );
+};
 
-export default UpcomingMovies
+export default UpcomingMovies;

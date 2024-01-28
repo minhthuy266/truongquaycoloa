@@ -9,6 +9,7 @@ const Slider = () => {
   return (
     <div className="max-w-[100vw]">
       <Swiper
+        className="w-[100vw] h-[100vh]"
         modules={[Autoplay]}
         autoplay={{ delay: 3000 }}
         loop={true}
@@ -22,7 +23,7 @@ const Slider = () => {
             <img
               src={Image1}
               alt=""
-              className="w-[100vw] h-[80vh] object-cover"
+              className="w-[100vw] h-[100vh] object-cover"
             />
           </div>
         </SwiperSlide>
@@ -31,7 +32,7 @@ const Slider = () => {
             <img
               src={Image2}
               alt=""
-              className="w-[100vw] h-[80vh] object-cover"
+              className="w-[100vw] h-[100vh] object-cover"
             />
           </div>
         </SwiperSlide>

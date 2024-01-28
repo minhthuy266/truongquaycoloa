@@ -20,6 +20,7 @@ import CostumeAndPropsScreen from "./screens/CostumeAndPropsScreen";
 import FilmmakingEquipmentScreen from "./screens/FilmmakingEquipmentScreen";
 import InDoorScreen from "./screens/InDoorScreen";
 import NewsDetailScreen from "./screens/NewsDetailScreen";
+import VideoScreen from "./screens/VideoScreen";
 
 const router = createBrowserRouter([
   {
@@ -129,10 +130,18 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/gallery",
+    path: "/gallery/images",
     element: (
       <MainLayout>
         <GalleryScreen />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "/gallery/videos",
+    element: (
+      <MainLayout>
+        <VideoScreen />
       </MainLayout>
     ),
   },

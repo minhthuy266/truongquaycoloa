@@ -1,8 +1,15 @@
 import GhostContentAPI from "@tryghost/content-api";
 
 export const api = new GhostContentAPI({
-    url: "http://localhost:2368",
-    key: "ddb444e9914aff3e590e40f0b8",
-    version: "v5.0",
-  });
-  
+  url: import.meta.env.VITE_API_URL,
+  key: import.meta.env.VITE_APP_KEY,
+  version: "v5.0",
+});
+
+export const removeAccents = (str) => {
+  return str
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/đ/g, "d")
+    .replace(/Đ/g, "D");
+};

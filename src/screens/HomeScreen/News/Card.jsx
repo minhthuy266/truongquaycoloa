@@ -1,13 +1,14 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Logo from "../../../assets/images/Header_Logo.png";
 
 const Card = ({ card }) => {
   return (
     <Link to={`/tin-tuc/${card.id}`} key={card.id}>
-      <div className="rounded-lg overflow-hidden shadow-lg">
+      <div className="rounded-lg overflow-hidden shadow-lg bg-white">
         <img
           className="w-full h-[260px] object-cover"
-          src={card?.feature_image}
+          src={card?.feature_image || Logo}
           alt={card?.title}
         />
         <div className="px-6 py-4">
