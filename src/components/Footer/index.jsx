@@ -43,18 +43,18 @@ const Footer = () => {
 
         <div>
           <div className="flex space-x-8">
-            <a href="#" className="text-white">
+          <a href="https://www.facebook.com/people/Tr%C6%B0%E1%BB%9Dng-Quay-C%E1%BB%95-Loa/100063192820419/?mibextid=LQQJ4d" target="_blank" rel="noreferrer" className="text-white hover:text-white">
               <FaFacebook style={{ fontSize: "24px" }} />
             </a>
-            <a href="#" className="text-white">
+            {/* <a href="#" className="text-white">
               <FaTwitter style={{ fontSize: "24px" }} />
-            </a>
-            <a href="#" className="text-white">
+            </a> */}
+            <a href="mailto:coloastudio@gmail.com" target="_blank" rel="noreferrer" className="text-white hover:text-white">
               <FaGoogle style={{ fontSize: "24px" }} />
             </a>
-            <a href="#" className="text-white">
+            {/* <a href="#" className="text-white">
               <FaYoutube style={{ fontSize: "24px" }} />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
