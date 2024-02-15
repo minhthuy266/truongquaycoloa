@@ -1,7 +1,7 @@
 import { Drawer, Menu } from "antd";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { FaFacebook, FaGoogle, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { TiThMenu } from "react-icons/ti";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../../assets/images/Header_Logo.png";
@@ -71,7 +71,7 @@ const Header = () => {
             <NavLink to="/"></NavLink>
             <NavLink to="/gioi-thieu">GIỚI THIỆU</NavLink>
             <NavLink to="/tin-tuc">TIN TỨC</NavLink>
-            {/* <NavLink to='/dich-vu'>DỊCH VỤ</NavLink> */}
+            <NavLink to='/dich-vu'>DỊCH VỤ</NavLink>
             <NavLink to="/phim-sap-chieu">PHIM SẮP CHIẾU</NavLink>
             <NavLink to="/lich-chieu-phim">LỊCH CHIẾU PHIM</NavLink>
             <GalleryNavLink
@@ -111,9 +111,9 @@ const Header = () => {
               <MobileNavLink to="/tin-tuc" onClick={onClose}>
                 TIN TỨC
               </MobileNavLink>
-              {/* <MobileNavLink to="/dich-vu" onClick={onClose}>
+              <MobileNavLink to="/dich-vu" onClick={onClose}>
                 DỊCH VỤ
-              </MobileNavLink> */}
+              </MobileNavLink>
               <MobileNavLink to="/phim-sap-chieu" onClick={onClose}>
                 PHIM SẮP CHIẾU
               </MobileNavLink>
@@ -136,7 +136,6 @@ const Header = () => {
 
 const NavLink = ({ to, children }) => {
   const location = useLocation();
-  console.log("=====location====", location, to);
   const isActive = location.pathname === to || location.pathname.includes(to);
 
   const baseClass =

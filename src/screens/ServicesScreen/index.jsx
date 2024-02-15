@@ -1,6 +1,8 @@
 const ServicesScreen = () => {
   return (
-    <div className='text-black container mx-auto mt-[120px] global-text-base custom-min-height'></div>
+    <div className='min-h-[100vh] mt-48'>
+      <div className='text-black container global-text-base'>Dịch vụ</div>
+    </div>
   )
 }
 
