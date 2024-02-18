@@ -70,26 +70,36 @@ const Header = () => {
           <div className="hidden c1:flex space-x-14 c1:space-x-20 items-center mr-14">
             <NavLink to="/"></NavLink>
             <NavLink to="/gioi-thieu">GIỚI THIỆU</NavLink>
+            <NavLink to="/dich-vu">DỊCH VỤ</NavLink>
             <NavLink to="/tin-tuc">TIN TỨC</NavLink>
-            <NavLink to='/dich-vu'>DỊCH VỤ</NavLink>
             <NavLink to="/phim-sap-chieu">PHIM SẮP CHIẾU</NavLink>
-            <NavLink to="/lich-chieu-phim">LỊCH CHIẾU PHIM</NavLink>
             <GalleryNavLink
               to="/gallery"
               className="w-[100px] global-text-base"
             >
               GALLERY
             </GalleryNavLink>
+            <NavLink to="/lich-chieu-phim">LỊCH CHIẾU PHIM</NavLink>
           </div>
 
           <div className="flex space-x-8">
-            <a href="https://www.facebook.com/people/Tr%C6%B0%E1%BB%9Dng-Quay-C%E1%BB%95-Loa/100063192820419/?mibextid=LQQJ4d" target="_blank" rel="noreferrer" className="text-white hover:text-white">
+            <a
+              href="https://www.facebook.com/people/Tr%C6%B0%E1%BB%9Dng-Quay-C%E1%BB%95-Loa/100063192820419/?mibextid=LQQJ4d"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white hover:text-white"
+            >
               <FaFacebook style={{ fontSize: "24px" }} />
             </a>
             {/* <a href="#" className="text-white">
               <FaTwitter style={{ fontSize: "24px" }} />
             </a> */}
-            <a href="mailto:coloastudio@gmail.com" target="_blank" rel="noreferrer" className="text-white hover:text-white">
+            <a
+              href="mailto:coloastudio@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white hover:text-white"
+            >
               <FaGoogle style={{ fontSize: "24px" }} />
             </a>
             {/* <a href="#" className="text-white">
@@ -108,23 +118,23 @@ const Header = () => {
               <MobileNavLink to="/gioi-thieu" onClick={onClose}>
                 GIỚI THIỆU
               </MobileNavLink>
-              <MobileNavLink to="/tin-tuc" onClick={onClose}>
-                TIN TỨC
-              </MobileNavLink>
               <MobileNavLink to="/dich-vu" onClick={onClose}>
                 DỊCH VỤ
               </MobileNavLink>
+              <MobileNavLink to="/tin-tuc" onClick={onClose}>
+                TIN TỨC
+              </MobileNavLink>
               <MobileNavLink to="/phim-sap-chieu" onClick={onClose}>
                 PHIM SẮP CHIẾU
-              </MobileNavLink>
-              <MobileNavLink to="/lich-chieu-phim" onClick={onClose}>
-                LỊCH CHIẾU PHIM
               </MobileNavLink>
               <MobileNavLink to="/gallery/images" onClick={onClose}>
                 HÌNH ẢNH
               </MobileNavLink>
               <MobileNavLink to="/gallery/videos" onClick={onClose}>
                 VIDEO
+              </MobileNavLink>
+              <MobileNavLink to="/lich-chieu-phim" onClick={onClose}>
+                LỊCH CHIẾU PHIM
               </MobileNavLink>
             </Drawer>
           </div>

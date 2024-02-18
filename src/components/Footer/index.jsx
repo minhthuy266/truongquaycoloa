@@ -1,4 +1,4 @@
-import { FaFacebook, FaGoogle, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaGoogle } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -10,11 +10,11 @@ const Footer = () => {
             Địa chỉ: Trường quay Cổ Loa - Số 1 Đào Duy Tùng, Đông Anh, TP.Hà Nội
           </p>
           <p>
-            Liên hệ: Mr. Lê Anh Phương - Phó Phòng Kinh Doanh (0946.653.988)
+            Liên hệ: Mr. Lê Anh Phương - Trưỏng phòng kỹ thuật và Sản xuất
+            chương trình (0946.653.988)
           </p>
           <p>
-            Liên hệ: Mr. Nguyễn Thế Anh - Phụ Trách Phòng Kế Hoạch
-            (0965.510.795)
+            Liên hệ: Mr. Nguyễn Thế Anh - Nhân viên Kinh doanh (0965.510.795)
           </p>
           <iframe
             title="Google Map"
@@ -43,13 +43,23 @@ const Footer = () => {
 
         <div>
           <div className="flex space-x-8">
-          <a href="https://www.facebook.com/people/Tr%C6%B0%E1%BB%9Dng-Quay-C%E1%BB%95-Loa/100063192820419/?mibextid=LQQJ4d" target="_blank" rel="noreferrer" className="text-white hover:text-white">
+            <a
+              href="https://www.facebook.com/people/Tr%C6%B0%E1%BB%9Dng-Quay-C%E1%BB%95-Loa/100063192820419/?mibextid=LQQJ4d"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white hover:text-white"
+            >
               <FaFacebook style={{ fontSize: "24px" }} />
             </a>
             {/* <a href="#" className="text-white">
               <FaTwitter style={{ fontSize: "24px" }} />
             </a> */}
-            <a href="mailto:coloastudio@gmail.com" target="_blank" rel="noreferrer" className="text-white hover:text-white">
+            <a
+              href="mailto:coloastudio@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white hover:text-white"
+            >
               <FaGoogle style={{ fontSize: "24px" }} />
             </a>
             {/* <a href="#" className="text-white">
