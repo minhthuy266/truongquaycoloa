@@ -6,8 +6,6 @@ const Card = ({ card }) => {
     console.log("clicked");
   };
 
-  console.log("-----card-----", card);
-
   return (
     <div className="shadow-lg">
       <img

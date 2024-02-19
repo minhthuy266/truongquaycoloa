@@ -9,7 +9,6 @@ const CardList = () => {
   useEffect(() => {
     api.posts
       .browse({
-        limit: 4,
         include: "tags,authors",
         filter: "tag:dich-vu",
       })
