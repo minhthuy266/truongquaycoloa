@@ -133,6 +133,10 @@ button:focus-visible {
   border-bottom-color: transparent !important;
 }
 
+.ant-menu-light.ant-menu-horizontal {
+  width: 73px;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

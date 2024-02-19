@@ -22,8 +22,8 @@ const News = () => {
 
   return (
     <div className="bg-[#f1f1f2]">
-      <div className="container mx-auto pt-40 pb-72">
-        <div className="text-black pb-16 uppercase text-[38px] text-center">
+      <div className="container mx-auto pt-24 pb-72">
+        <div className="text-black pb-24 uppercase text-[38px] text-center">
           Tin tức
         </div>
         <div className="text-[38px] uppercase flex flex-row items-center mx-auto">

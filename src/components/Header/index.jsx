@@ -75,7 +75,7 @@ const Header = () => {
             <NavLink to="/phim-sap-chieu">PHIM SẮP CHIẾU</NavLink>
             <GalleryNavLink
               to="/gallery"
-              className="w-[100px] global-text-base"
+              className="w-[120px] global-text-base"
             >
               GALLERY
             </GalleryNavLink>
