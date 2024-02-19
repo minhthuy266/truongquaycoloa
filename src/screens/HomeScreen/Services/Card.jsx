@@ -1,16 +1,22 @@
 import PrimaryButton from "../../../components/GlobalComponents/Button";
 import PropTypes from "prop-types";
 
-const Card = ({ title, description, image }) => {
+const Card = ({ card }) => {
   const handleClick = () => {
     console.log("clicked");
   };
 
+  console.log("-----card-----", card);
+
   return (
     <div className="shadow-lg">
-      <img className="w-full h-[260px] object-cover" src={image} alt={title} />
+      <img
+        className="w-full h-[260px] object-cover"
+        src={card?.feature_image}
+        alt={card?.title}
+      />
       <div className="px-6 py-4">
-        <p className="text-gray-700 text-[20px]">{description}</p>
+        <p className="text-gray-700 text-[20px]">{card?.title}</p>
         <PrimaryButton onClick={handleClick} label="Xem thêm" />
       </div>
     </div>
@@ -20,7 +26,9 @@ const Card = ({ title, description, image }) => {
 export default Card;
 
 Card.propTypes = {
-  title: PropTypes.any.isRequired,
-  description: PropTypes.any.isRequired,
-  image: PropTypes.any.isRequired,
+  card: {
+    feature_image: PropTypes.any.isRequired,
+    description: PropTypes.any.isRequired,
+    image: PropTypes.any.isRequired,
+  },
 };

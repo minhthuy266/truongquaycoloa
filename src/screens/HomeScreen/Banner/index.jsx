@@ -23,7 +23,7 @@ const Slider = () => {
         onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide>
-          <div>
+          <div style={{ backgroundImage: Image1 }}>
             <img
               src={Image1}
               alt=""

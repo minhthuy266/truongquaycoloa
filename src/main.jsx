@@ -1,26 +1,23 @@
 import * as React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./post-feed.css";
-import "./single-post.css";
 import "./animations.css";
-import "./portal.css";
-import "./kg.css";
 import "./index.css";
+import "./kg.css";
 import MainLayout from "./layouts/MainLayout";
+import "./portal.css";
+import "./post-feed.css";
 import AboutScreen from "./screens/AboutScreen";
-import HomeScreen from "./screens/HomeScreen";
-import NewsScreen from "./screens/NewsScreen";
-import ServicesScreen from "./screens/ServicesScreen";
-import UpcomingFilmScreen from "./screens/UpcomingFilmScreen";
-import ShowTimeScreen from "./screens/ShowTimeScreen";
 import GalleryScreen from "./screens/GalleryScreen";
-import OutDoorScreen from "./screens/OutDoorScreen";
-import CostumeAndPropsScreen from "./screens/CostumeAndPropsScreen";
-import FilmmakingEquipmentScreen from "./screens/FilmmakingEquipmentScreen";
-import InDoorScreen from "./screens/InDoorScreen";
+import HomeScreen from "./screens/HomeScreen";
 import NewsDetailScreen from "./screens/NewsDetailScreen";
+import NewsScreen from "./screens/NewsScreen";
+import ServiceDetailScreen from "./screens/ServiceDetailScreen";
+import ServicesScreen from "./screens/ServicesScreen";
+import ShowTimeScreen from "./screens/ShowTimeScreen";
+import UpcomingFilmScreen from "./screens/UpcomingFilmScreen";
 import VideoScreen from "./screens/VideoScreen";
+import "./single-post.css";
 
 const router = createBrowserRouter([
   {
@@ -60,42 +57,6 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/dich-vu/truong-quay-ngoai-canh",
-    element: (
-      <MainLayout>
-        <OutDoorScreen />
-      </MainLayout>
-    ),
-  },
-
-  {
-    path: "/dich-vu/trang-phuc-dao-cu",
-    element: (
-      <MainLayout>
-        <CostumeAndPropsScreen />
-      </MainLayout>
-    ),
-  },
-
-  {
-    path: "/dich-vu/thiet-bi-lam-phim",
-    element: (
-      <MainLayout>
-        <FilmmakingEquipmentScreen />
-      </MainLayout>
-    ),
-  },
-
-  {
-    path: "/dich-vu/truong-quay-noi",
-    element: (
-      <MainLayout>
-        <InDoorScreen />
-      </MainLayout>
-    ),
-  },
-
-  {
     path: "/tin-tuc",
     element: (
       <MainLayout>
@@ -109,6 +70,15 @@ const router = createBrowserRouter([
     element: (
       <MainLayout>
         <NewsDetailScreen />
+      </MainLayout>
+    ),
+  },
+
+  {
+    path: "/dich-vu/:slug",
+    element: (
+      <MainLayout>
+        <ServiceDetailScreen />
       </MainLayout>
     ),
   },
