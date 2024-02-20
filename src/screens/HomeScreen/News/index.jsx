@@ -21,7 +21,7 @@ const News = () => {
   }, []);
 
   return (
-    <div className="bg-[#f1f1f2]">
+    <div>
       <div className="container mx-auto pt-24 pb-72">
         <div className="text-black pb-24 uppercase text-[38px] text-center">
           Tin tức

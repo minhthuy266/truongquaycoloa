@@ -9,9 +9,9 @@ const HomeScreen = () => {
     <>
       <Slider />
       <Services />
-      <ShowTime />
       <UpcomingMovies />
       <News />
+      <ShowTime />
     </>
   );
 };

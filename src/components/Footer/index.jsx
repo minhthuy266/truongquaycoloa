@@ -10,8 +10,8 @@ const Footer = () => {
             Địa chỉ: Trường quay Cổ Loa - Số 1 Đào Duy Tùng, Đông Anh, TP.Hà Nội
           </p>
           <p>
-            Liên hệ: Mr. Lê Anh Phương - Trưởng phòng kỹ thuật và Sản xuất
-            chương trình (0969.878.385 - 0586.851.111)
+            Liên hệ: Mr. Lê Anh Phương - Trưởng phòng Kỹ thuật và Sản xuất
+            chương trình (096.987.8385 - 058.685.1111)
           </p>
 
           <iframe
