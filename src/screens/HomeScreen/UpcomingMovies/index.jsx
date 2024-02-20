@@ -22,13 +22,13 @@ const UpcomingMovies = () => {
 
   return (
     <div className=' mx-auto pt-24 pb-48 bg-[#f1f1f2]'>
-      <div className='container'>
-        <div className='text-black pb-24 uppercase text-[38px] text-center'>
-          Phim sắp chiếu
-        </div>
+      <div className='text-black pb-24 uppercase text-[38px] text-center'>
+        Phim sắp chiếu
       </div>
 
-      <CardList posts={posts} />
+      <div className='container'>
+        <CardList posts={posts} />
+      </div>
     </div>
   )
 };
