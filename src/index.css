@@ -137,6 +137,16 @@ button:focus-visible {
   width: 73px;
 }
 
+.swiper-button-prev::after, .swiper-rtl .swiper-button-next::after {
+  content: 'prev';
+  color: white;
+}
+
+.swiper-button-next::after, .swiper-rtl .swiper-button-prev::after {
+  content: 'next';
+  color: white;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
