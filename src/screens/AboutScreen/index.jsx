@@ -1,24 +1,6 @@
-import {useEffect, useState} from "react"
-import {api} from "../../utils"
+import PropTypes from "prop-types"
 
-const AboutScreen = () => {
-  const [posts, setPosts] = useState([])
-
-  useEffect(() => {
-    api.posts
-      .browse({
-        limit: 4,
-        include: "tags,authors",
-        filter: "tag:gioi-thieu",
-      })
-      .then((posts) => {
-        setPosts(posts)
-      })
-      .catch((err) => {
-        console.error(err)
-      })
-  }, [])
-
+const AboutScreen = ({posts}) => {
   return (
     <div className='text-black container mx-auto mt-[120px] global-text-base custom-min-height'>
       <div className='container pb-24'>
@@ -26,6 +8,14 @@ const AboutScreen = () => {
       </div>
     </div>
   )
+}
+
+AboutScreen.propTypes = {
+  posts: PropTypes.arrayOf(
+    PropTypes.shape({
+      html: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 }
 
 export default AboutScreen
