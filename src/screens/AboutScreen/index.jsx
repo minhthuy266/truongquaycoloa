@@ -1,15 +1,31 @@
+import {useEffect, useState} from "react"
+import {api} from "../../utils"
+
 const AboutScreen = () => {
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    api.posts
+      .browse({
+        limit: 4,
+        include: "tags,authors",
+        filter: "tag:gioi-thieu",
+      })
+      .then((posts) => {
+        setPosts(posts)
+      })
+      .catch((err) => {
+        console.error(err)
+      })
+  }, [])
+
   return (
-    <div className="text-black container mx-auto mt-[120px] global-text-base custom-min-height">
-      <div className="container pb-24">
-        <p>Mọi thông tin chi tiết xin liên hệ:</p>
-        <p>
-          Mr. Lê Anh Phương - Trưởng phòng Kỹ thuật và Sản xuất chương trình
-          (096.987.8385 - 058.685.1111)
-        </p>
+    <div className='text-black container mx-auto mt-[120px] global-text-base custom-min-height'>
+      <div className='container pb-24'>
+        <div dangerouslySetInnerHTML={{__html: posts[0]?.html}}></div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AboutScreen;
+export default AboutScreen
