@@ -16,7 +16,8 @@ import { api } from "./utils";
 
 export function App() {
 
-  const [posts, setPosts] = useState([])
+  /* ----------------------------------- *** ---------------------------------- */
+  const [postsAbout, setPostsAbout] = useState([])
 
   useEffect(() => {
     api.posts
@@ -26,32 +27,112 @@ export function App() {
         filter: "tag:gioi-thieu",
       })
       .then((posts) => {
-        setPosts(posts)
+        setPostsAbout(posts)
       })
       .catch((err) => {
         console.error(err)
       })
   }, [])
 
+/* ----------------------------------- *** ---------------------------------- */
+  const [postsService, setPostsService] = useState([]);
+
+  useEffect(() => {
+    api.posts
+      .browse({
+        include: "tags,authors",
+        filter: "tag:dich-vu",
+      })
+      .then((posts) => {
+        setPostsService(posts);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  /* ----------------------------------- *** ---------------------------------- */
+  const [postsUpcomingMovie, setPostsUpcomingMovie] = useState([]);
+
+  useEffect(() => {
+    api.posts
+      .browse({
+        limit: 4,
+        include: "tags,authors",
+        filter: "tag:phim-sap-chieu-trang-chu",
+      })
+      .then((posts) => {
+        setPostsUpcomingMovie(posts);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+/* ----------------------------------- *** ---------------------------------- */
+const [postsNewsHome, setPostsNewsHome] = useState([]);
+
+useEffect(() => {
+  api.posts
+    .browse({
+      limit: 4,
+      include: "tags,authors",
+      filter: "tag:tin-tuc-trang-chu",
+    })
+    .then((posts) => {
+      setPostsNewsHome(posts);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}, []);
+
+
+/* ----------------------------------- *** ---------------------------------- */
+const [postShowTime, setPostShowTime] = useState([]);
+
+
+useEffect(() => {
+  api.posts
+    .browse({
+      limit: 4,
+      include: "tags,authors",
+      filter: "tag:lich-chieu-phim",
+    })
+    .then((posts) => {
+      setPostShowTime(posts);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}, []);
+
+
+
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
         <MainLayout>
-          <HomeScreen />
+          <HomeScreen
+            postsService={postsService}
+            postsUpcomingMovie={postsUpcomingMovie}
+            postsNewsHome={postsNewsHome}
+            postShowTime={postShowTime}
+          />
         </MainLayout>
       ),
     },
-  
+
     {
       path: "/gioi-thieu",
       element: (
         <MainLayout>
-          <AboutScreen posts={posts}/>
+          <AboutScreen posts={postsAbout} />
         </MainLayout>
       ),
     },
-  
+
     {
       path: "/tin-tuc",
       element: (
@@ -60,7 +141,7 @@ export function App() {
         </MainLayout>
       ),
     },
-  
+
     {
       path: "/dich-vu",
       element: (
@@ -69,7 +150,7 @@ export function App() {
         </MainLayout>
       ),
     },
-  
+
     {
       path: "/tin-tuc",
       element: (
@@ -78,7 +159,7 @@ export function App() {
         </MainLayout>
       ),
     },
-  
+
     {
       path: "/tin-tuc/:slug",
       element: (
@@ -87,7 +168,7 @@ export function App() {
         </MainLayout>
       ),
     },
-  
+
     {
       path: "/dich-vu/:slug",
       element: (
@@ -96,7 +177,7 @@ export function App() {
         </MainLayout>
       ),
     },
-  
+
     {
       path: "/phim-sap-chieu",
       element: (
@@ -129,7 +210,7 @@ export function App() {
         </MainLayout>
       ),
     },
-  ]);
+  ])
 
   return (
     <React.StrictMode>

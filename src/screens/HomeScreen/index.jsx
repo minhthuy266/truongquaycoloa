@@ -4,16 +4,26 @@ import Services from "./Services";
 import ShowTime from "./ShowTime";
 import UpcomingMovies from "./UpcomingMovies";
 
-const HomeScreen = () => {
+import PropTypes from 'prop-types';
+
+const HomeScreen = ({ postsService, postsUpcomingMovie, postsNewsHome, postShowTime }) => {
   return (
     <>
       <Slider />
-      <Services />
-      <UpcomingMovies />
-      <News />
-      <ShowTime />
+      <Services postsService={postsService}  />
+      <UpcomingMovies postsUpcomingMovie={postsUpcomingMovie} />
+      <News postsNewsHome={postsNewsHome}/>
+      <ShowTime postShowTime={postShowTime}/>
     </>
   );
+};
+
+HomeScreen.propTypes = {
+  postsService: PropTypes.object.isRequired,
+  postsUpcomingMovie: PropTypes.object.isRequired,
+  postsNewsHome: PropTypes.object.isRequired,
+  postShowTime: PropTypes.object.isRequired,
+
 };
 
 export default HomeScreen;
