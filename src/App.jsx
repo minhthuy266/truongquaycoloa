@@ -146,7 +146,7 @@ useEffect(() => {
       path: "/dich-vu",
       element: (
         <MainLayout>
-          <ServicesScreen />
+          <ServicesScreen postsService={postsService}/>
         </MainLayout>
       ),
     },
