@@ -34,6 +34,23 @@ export function App() {
   }, []);
 
   /* ----------------------------------- *** ---------------------------------- */
+
+  useEffect(() => {
+    api.posts
+      .browse({
+        limit: 4,
+        include: "tags,authors",
+        filter: "tag:gioi-thieu",
+      })
+      .then((posts) => {
+        setPostsAbout(posts);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  /* ----------------------------------- *** ---------------------------------- */
   const [postsService, setPostsService] = useState([]);
 
   useEffect(() => {
@@ -56,9 +73,8 @@ export function App() {
   useEffect(() => {
     api.posts
       .browse({
-        limit: 4,
         include: "tags,authors",
-        filter: "tag:phim-sap-chieu-trang-chu",
+        filter: "tag:phim-sap-chieu",
       })
       .then((posts) => {
         setPostsUpcomingMovie(posts);
@@ -104,6 +120,44 @@ export function App() {
       });
   }, []);
 
+  /* ----------------------------------- *** ---------------------------------- */
+
+  const [postImages, setPostImages] = useState([]);
+
+  useEffect(() => {
+    api.posts
+      .browse({
+        limit: 4,
+        include: "tags,authors",
+        filter: "tag:trang-hinh-anh",
+      })
+      .then((posts) => {
+        setPostImages(posts);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  /* ----------------------------------- *** ---------------------------------- */
+
+  const [postVideos, setPostVideos] = useState([]);
+
+  useEffect(() => {
+    api.posts
+      .browse({
+        limit: 4,
+        include: "tags,authors",
+        filter: "tag:trang-video",
+      })
+      .then((posts) => {
+        setPostVideos(posts);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -111,7 +165,7 @@ export function App() {
         <MainLayout>
           <HomeScreen
             postsService={postsService}
-            postsUpcomingMovie={postsUpcomingMovie}
+            postsUpcomingMovie={postsUpcomingMovie?.slice(0, 4)}
             postsNewsHome={postsNewsHome}
             postShowTime={postShowTime}
           />
@@ -193,7 +247,7 @@ export function App() {
       path: "/gallery/images",
       element: (
         <MainLayout>
-          <GalleryScreen />
+          <GalleryScreen posts={postImages} />
         </MainLayout>
       ),
     },
@@ -201,7 +255,7 @@ export function App() {
       path: "/gallery/videos",
       element: (
         <MainLayout>
-          <VideoScreen />
+          <VideoScreen posts={postVideos} />
         </MainLayout>
       ),
     },
