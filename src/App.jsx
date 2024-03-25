@@ -15,9 +15,8 @@ import VideoScreen from "./screens/VideoScreen";
 import { api } from "./utils";
 
 export function App() {
-
   /* ----------------------------------- *** ---------------------------------- */
-  const [postsAbout, setPostsAbout] = useState([])
+  const [postsAbout, setPostsAbout] = useState([]);
 
   useEffect(() => {
     api.posts
@@ -27,14 +26,31 @@ export function App() {
         filter: "tag:gioi-thieu",
       })
       .then((posts) => {
-        setPostsAbout(posts)
+        setPostsAbout(posts);
       })
       .catch((err) => {
-        console.error(err)
-      })
-  }, [])
+        console.error(err);
+      });
+  }, []);
 
-/* ----------------------------------- *** ---------------------------------- */
+  /* ----------------------------------- *** ---------------------------------- */
+
+  useEffect(() => {
+    api.posts
+      .browse({
+        limit: 4,
+        include: "tags,authors",
+        filter: "tag:gioi-thieu",
+      })
+      .then((posts) => {
+        setPostsAbout(posts);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  /* ----------------------------------- *** ---------------------------------- */
   const [postsService, setPostsService] = useState([]);
 
   useEffect(() => {
@@ -57,9 +73,8 @@ export function App() {
   useEffect(() => {
     api.posts
       .browse({
-        limit: 4,
         include: "tags,authors",
-        filter: "tag:phim-sap-chieu-trang-chu",
+        filter: "tag:phim-sap-chieu",
       })
       .then((posts) => {
         setPostsUpcomingMovie(posts);
@@ -69,45 +84,79 @@ export function App() {
       });
   }, []);
 
-/* ----------------------------------- *** ---------------------------------- */
-const [postsNewsHome, setPostsNewsHome] = useState([]);
+  /* ----------------------------------- *** ---------------------------------- */
+  const [postsNewsHome, setPostsNewsHome] = useState([]);
 
-useEffect(() => {
-  api.posts
-    .browse({
-      limit: 4,
-      include: "tags,authors",
-      filter: "tag:tin-tuc-trang-chu",
-    })
-    .then((posts) => {
-      setPostsNewsHome(posts);
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-}, []);
+  useEffect(() => {
+    api.posts
+      .browse({
+        limit: 4,
+        include: "tags,authors",
+        filter: "tag:tin-tuc-trang-chu",
+      })
+      .then((posts) => {
+        setPostsNewsHome(posts);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
+  /* ----------------------------------- *** ---------------------------------- */
+  const [postShowTime, setPostShowTime] = useState([]);
 
-/* ----------------------------------- *** ---------------------------------- */
-const [postShowTime, setPostShowTime] = useState([]);
+  useEffect(() => {
+    api.posts
+      .browse({
+        limit: 4,
+        include: "tags,authors",
+        filter: "tag:lich-chieu-phim",
+      })
+      .then((posts) => {
+        setPostShowTime(posts);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
+  /* ----------------------------------- *** ---------------------------------- */
 
-useEffect(() => {
-  api.posts
-    .browse({
-      limit: 4,
-      include: "tags,authors",
-      filter: "tag:lich-chieu-phim",
-    })
-    .then((posts) => {
-      setPostShowTime(posts);
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-}, []);
+  const [postImages, setPostImages] = useState([]);
 
+  useEffect(() => {
+    api.posts
+      .browse({
+        limit: 4,
+        include: "tags,authors",
+        filter: "tag:trang-hinh-anh",
+      })
+      .then((posts) => {
+        setPostImages(posts);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
+  /* ----------------------------------- *** ---------------------------------- */
+
+  const [postVideos, setPostVideos] = useState([]);
+
+  useEffect(() => {
+    api.posts
+      .browse({
+        limit: 4,
+        include: "tags,authors",
+        filter: "tag:trang-video",
+      })
+      .then((posts) => {
+        setPostVideos(posts);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
   const router = createBrowserRouter([
     {
@@ -116,7 +165,7 @@ useEffect(() => {
         <MainLayout>
           <HomeScreen
             postsService={postsService}
-            postsUpcomingMovie={postsUpcomingMovie}
+            postsUpcomingMovie={postsUpcomingMovie?.slice(0, 4)}
             postsNewsHome={postsNewsHome}
             postShowTime={postShowTime}
           />
@@ -146,7 +195,7 @@ useEffect(() => {
       path: "/dich-vu",
       element: (
         <MainLayout>
-          <ServicesScreen postsService={postsService}/>
+          <ServicesScreen postsService={postsService} />
         </MainLayout>
       ),
     },
@@ -182,7 +231,7 @@ useEffect(() => {
       path: "/phim-sap-chieu",
       element: (
         <MainLayout>
-          <UpcomingFilmScreen />
+          <UpcomingFilmScreen postsUpcomingMovie={postsUpcomingMovie} />
         </MainLayout>
       ),
     },
@@ -190,7 +239,7 @@ useEffect(() => {
       path: "/lich-chieu-phim",
       element: (
         <MainLayout>
-          <ShowTimeScreen />
+          <ShowTimeScreen postShowTime={postShowTime} />
         </MainLayout>
       ),
     },
@@ -198,7 +247,7 @@ useEffect(() => {
       path: "/gallery/images",
       element: (
         <MainLayout>
-          <GalleryScreen />
+          <GalleryScreen posts={postImages} />
         </MainLayout>
       ),
     },
@@ -206,11 +255,11 @@ useEffect(() => {
       path: "/gallery/videos",
       element: (
         <MainLayout>
-          <VideoScreen />
+          <VideoScreen posts={postVideos} />
         </MainLayout>
       ),
     },
-  ])
+  ]);
 
   return (
     <React.StrictMode>
@@ -218,4 +267,3 @@ useEffect(() => {
     </React.StrictMode>
   );
 }
-

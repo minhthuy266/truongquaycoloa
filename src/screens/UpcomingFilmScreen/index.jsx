@@ -1,26 +1,16 @@
-import { useEffect, useState } from "react";
-import FilmsBox from "../../components/UpcomingFilmScreen/FilmsBox";
-import { api } from "../../utils";
+import UpcomingMovies from "../HomeScreen/UpcomingMovies";
+import PropTypes from "prop-types";
 
-const UpcomingFilmScreen = () => {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    api.posts
-      .browse({ include: "tags,authors", filter: "tag:phim-sap-chieu" })
-      .then((posts) => {
-        setPosts(posts);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
-
+const UpcomingFilmScreen = ({ postsUpcomingMovie }) => {
   return (
-    <div>
-      <FilmsBox posts={posts} setPosts={setPosts} />
+    <div className="mt-40">
+      <UpcomingMovies postsUpcomingMovie={postsUpcomingMovie} />
     </div>
   );
 };
 
 export default UpcomingFilmScreen;
+
+UpcomingFilmScreen.propTypes = {
+  postsUpcomingMovie: PropTypes.array.isRequired,
+};
