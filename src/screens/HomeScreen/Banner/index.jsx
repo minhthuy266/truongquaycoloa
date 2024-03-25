@@ -6,6 +6,9 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Image1 from "../../../assets/images/Slider1.jpg";
 import Image2 from "../../../assets/images/Slider2.jpg";
+import Image3 from "../../../assets/images/Slider3.jpg";
+import Image4 from "../../../assets/images/Slider4.jpg";
+import Image5 from "../../../assets/images/Slider5.jpg";
 
 const Slider = () => {
   return (
@@ -35,6 +38,33 @@ const Slider = () => {
           <div>
             <img
               src={Image2}
+              alt=""
+              className="w-[100vw] h-[80vh] object-cover"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            <img
+              src={Image3}
+              alt=""
+              className="w-[100vw] h-[80vh] object-cover"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            <img
+              src={Image4}
+              alt=""
+              className="w-[100vw] h-[80vh] object-cover"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            <img
+              src={Image5}
               alt=""
               className="w-[100vw] h-[80vh] object-cover"
             />
