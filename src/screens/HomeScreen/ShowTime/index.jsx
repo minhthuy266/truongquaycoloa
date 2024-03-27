@@ -10,7 +10,7 @@ const ShowTime = ({postShowTime}) => {
       className={`text-black pt-24 pb-40 overflow-x-scroll ${
         history.pathname === "/lich-chieu-phim" ? "mt-40" : "bg-[#f1f1f2]"
       }`}>
-      <div className='text-[38px] text-center pb-24'>LỊCH CHIẾU PHIM</div>
+      <div className='text-[3.375rem] text-center pb-24'>LỊCH CHIẾU PHIM</div>
 
       <div className='max-w-[100vw]'>
         <div className='container flex justify-center mx-auto'>

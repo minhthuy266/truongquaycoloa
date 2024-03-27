@@ -14,7 +14,7 @@ const Slider = () => {
   return (
     <div className="max-w-[100vw]">
       <Swiper
-        className="w-[100vw] h-[80vh]"
+        className="h-auto sm:h-[80vh] mt-[74px]"
         modules={[Autoplay, Navigation, Pagination]}
         pagination={{ clickable: true }}
         navigation={true}
@@ -30,7 +30,7 @@ const Slider = () => {
             <img
               src={Image1}
               alt=""
-              className="w-[100vw] h-[80vh] object-cover"
+              className="w-[100vw] h-auto sm:h-[80vh] object-cover"
             />
           </div>
         </SwiperSlide>
@@ -39,7 +39,7 @@ const Slider = () => {
             <img
               src={Image2}
               alt=""
-              className="w-[100vw] h-[80vh] object-cover"
+              className="w-[100vw] h-auto sm:h-[80vh] object-cover"
             />
           </div>
         </SwiperSlide>
@@ -48,7 +48,7 @@ const Slider = () => {
             <img
               src={Image3}
               alt=""
-              className="w-[100vw] h-[80vh] object-cover"
+              className="w-[100vw] h-auto sm:h-[80vh] object-cover"
             />
           </div>
         </SwiperSlide>
@@ -57,7 +57,7 @@ const Slider = () => {
             <img
               src={Image4}
               alt=""
-              className="w-[100vw] h-[80vh] object-cover"
+              className="w-[100vw] h-auto sm:h-[80vh] object-cover"
             />
           </div>
         </SwiperSlide>
@@ -66,7 +66,7 @@ const Slider = () => {
             <img
               src={Image5}
               alt=""
-              className="w-[100vw] h-[80vh] object-cover"
+              className="w-[100vw] h-auto sm:h-[80vh] object-cover"
             />
           </div>
         </SwiperSlide>

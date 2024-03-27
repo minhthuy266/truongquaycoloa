@@ -97,9 +97,18 @@ button:focus-visible {
 
 .swiper-slide {
   display: flex !important;
-  margin-top: 6rem;
   margin-bottom: 6rem;
   padding-bottom: 6rem
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-slide {
+    padding-bottom: 0;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    display: none;
+  }
 }
 
 .clamp-3 {

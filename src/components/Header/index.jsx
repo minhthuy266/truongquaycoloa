@@ -60,7 +60,7 @@ const Header = () => {
 
   return (
     <nav className="bg-[#066398] p-4 w-[100vw] fixed top-0 right-0 left-0 bg-center global-text-base flex items-center z-50">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center h-[54px]">
         <Link to="/" className="text-white text-xl font-bold">
           <img src={Logo} alt="Home" width={100} height="auto" />
         </Link>
